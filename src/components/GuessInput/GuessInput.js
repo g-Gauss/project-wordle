@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 const MAX_CHARACTERS = 5;
 
-function GuessInput({ guess, setGuess }) {
+function GuessInput({ handleGuessSubmission }) {
+  const [tentativeGuess, setTentativeGuess] = useState("");
+
   function handleSubmit(event) {
     event.preventDefault();
-    console.log({ guess });
-    setGuess("");
+    handleGuessSubmission(tentativeGuess);
+    setTentativeGuess("");
   }
   return (
     <form className="guess-input-wrapper" onSubmit={handleSubmit}>
@@ -18,8 +20,10 @@ function GuessInput({ guess, setGuess }) {
         pattern={`[A-Za-z]{${MAX_CHARACTERS}}`}
         title={`Your answer must contain ${MAX_CHARACTERS} characters`}
         maxLength={MAX_CHARACTERS}
-        value={guess}
-        onChange={(event) => setGuess(event.target.value.toUpperCase())}
+        value={tentativeGuess}
+        onChange={(event) =>
+          setTentativeGuess(event.target.value.toUpperCase())
+        }
       />
     </form>
   );
