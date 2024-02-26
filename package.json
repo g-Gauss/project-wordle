@@ -2,7 +2,10 @@
   "name": "word-game",
   "version": "0.1.0",
   "private": true,
-  "author": "Josh Comeau <me@joshwcomeau.com>",
+  "contributors": [
+    "Josh Comeau <me@joshwcomeau.com>",
+    "Gabriel Galvez"
+  ],
   "dependencies": {
     "eslint": "8.49.0",
     "eslint-config-react-app": "7.0.1",
