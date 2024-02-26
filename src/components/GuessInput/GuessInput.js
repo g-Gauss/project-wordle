@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-
-const MAX_CHARACTERS = 5;
+import { MAX_CHARACTERS } from "../../constants";
 
 function GuessInput({ handleGuessSubmission }) {
   const [tentativeGuess, setTentativeGuess] = useState("");

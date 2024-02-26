@@ -14,11 +14,10 @@ function Game() {
   const [guesses, setGuesses] = useState([]);
 
   function handleGuessSubmission(tentativeGuess) {
-    const nextPreviousGuesses = [
-      ...guesses,
-      { guess: tentativeGuess, id: `${tentativeGuess}-${crypto.randomUUID()}` }, // Added id just in case user adds the same word twice (as unlikely as it may be)
-    ];
+    const nextPreviousGuesses = [...guesses, tentativeGuess];
     setGuesses(nextPreviousGuesses);
+
+    console.log(nextPreviousGuesses);
   }
 
   return (
