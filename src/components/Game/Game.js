@@ -16,13 +16,11 @@ function Game() {
   function handleGuessSubmission(tentativeGuess) {
     const nextPreviousGuesses = [...guesses, tentativeGuess];
     setGuesses(nextPreviousGuesses);
-
-    console.log(nextPreviousGuesses);
   }
 
   return (
     <>
-      <GuessList guesses={guesses} />
+      <GuessList guesses={guesses} answer={answer} />
       <GuessInput handleGuessSubmission={handleGuessSubmission} />
     </>
   );
