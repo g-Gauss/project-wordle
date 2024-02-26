@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MAX_CHARACTERS } from "../../constants";
 
-function GuessInput({ handleGuessSubmission }) {
+function GuessInput({ handleGuessSubmission, gameState }) {
   const [tentativeGuess, setTentativeGuess] = useState("");
 
   function handleSubmit(event) {
@@ -23,6 +23,7 @@ function GuessInput({ handleGuessSubmission }) {
         onChange={(event) =>
           setTentativeGuess(event.target.value.toUpperCase())
         }
+        disabled={gameState !== "inProgress"}
       />
     </form>
   );
