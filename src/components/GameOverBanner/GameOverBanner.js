@@ -2,11 +2,15 @@ import React from "react";
 import WonBanner from "../WonBanner";
 import LostBanner from "../LostBanner";
 
-function GameOverBanner({ gameState, numOfGuesses, answer }) {
+function GameOverBanner({ gameState, numOfGuesses, answer, resetGame }) {
   return (
     <>
-      {gameState === "won" && <WonBanner numOfGuesses={numOfGuesses} />}
-      {gameState === "lost" && <LostBanner answer={answer} />}
+      {gameState === "won" && (
+        <WonBanner numOfGuesses={numOfGuesses} resetGame={resetGame} />
+      )}
+      {gameState === "lost" && (
+        <LostBanner answer={answer} resetGame={resetGame} />
+      )}
     </>
   );
 }
